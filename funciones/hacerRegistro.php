@@ -5,9 +5,9 @@ $miObjeto = new stdClass();
 $miObjeto->nombre = $_GET['nombre'];
 $miObjeto->contraseña = $_GET['contraseña'];
 $miObjeto->contraseña = $_GET['contraseña'];
-var_dump($miObjeto->nombre);
-var_dump($miObjeto->contraseña);
-die();
+//var_dump($miObjeto->nombre);
+//var_dump($miObjeto->contraseña);
+//die();
 
 
 
@@ -16,7 +16,8 @@ $consulta =$objetoAccesoDato->RetornarConsulta("select nombre from usuario");
 $consulta->execute();
 $datos=$consulta->fetchall(PDO::FETCH_ASSOC);
 //var_dump($datos[0]['nombre']);
-//var_dump($datos);
+var_dump($datos);
+die();
 
 foreach ($datos as $usuario) 
 	{
