@@ -84,7 +84,7 @@ session_start();
   $consulta->execute();     
   $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
-  var_dump($consulta)
+  var_dump($datos)
   die();
 
     //$archivo = fopen("../archivos/facturados.txt", "r");
