@@ -11,7 +11,7 @@ session_start();
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Istic2019</title>
+    <title>Istic2019 Diciembre</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
