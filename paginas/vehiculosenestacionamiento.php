@@ -79,13 +79,13 @@ session_start();
 
 
 
-  $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+  //$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
   $consulta =$objetoAccesoDato->RetornarConsulta("select id ,patente  , horaingreso2  from registrovehiculo");
   $consulta->execute();     
   $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
-  var_dump($datos)
-  die();
+  var_dump($consulta)
+  //die();
 
     //$archivo = fopen("../archivos/facturados.txt", "r");
     //while(!feof($archivo)) 
