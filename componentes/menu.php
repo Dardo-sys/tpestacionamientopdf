@@ -17,17 +17,17 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/tpestacionamientophp/index.php">Inicio <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/index.php">Inicio <span class="sr-only">(current)</span></a>
             </li>
               <?php 
             if(isset($_SESSION['usuario'])==false){
               //solo muestra estos item , si el usuario no esta logeado
             ?>
             <li class="nav-item">
-              <a class="nav-link" href="/tpestacionamientophp/paginas/registro.php">Registrate</a>
+              <a class="nav-link" href="/paginas/registro.php">Registrate</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="/tpestacionamientophp/paginas/login.php">Login</a>
+              <a class="nav-link" href="/paginas/login.php">Login</a>
             </li>
             <?php 
             }
@@ -39,21 +39,21 @@
             ?>
 
             <li class="nav-item">
-              <a class="nav-link" href="/tpestacionamientophp/paginas/cargarvehiculo.php">IN Vehiculo</a>
+              <a class="nav-link" href="/paginas/cargarvehiculo.php">IN Vehiculo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/tpestacionamientophp/paginas/vehiculosenestacionamiento.php">Vehiculos estacionados</a>
+              <a class="nav-link" href="/paginas/vehiculosenestacionamiento.php">Vehiculos estacionados</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/tpestacionamientophp/paginas/facturar.php">OUT Vehiculo</a>
+              <a class="nav-link" href="/paginas/facturar.php">OUT Vehiculo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/tpestacionamientophp/paginas/listausuarios.php">Lista Usuarios</a>
+              <a class="nav-link" href="/paginas/listausuarios.php">Lista Usuarios</a>
             <li class="nav-item">
-              <a class="nav-link" href="/tpestacionamientophp/paginas/facturados.php">Vehiculos Retirados</a>
+              <a class="nav-link" href="/paginas/facturados.php">Vehiculos Retirados</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/tpestacionamientophp/funciones/hacerLogout.php">Kill Sesion</a>
+              <a class="nav-link" href="/funciones/hacerLogout.php">Kill Sesion</a>
             </li>
           
             <?php 
@@ -69,10 +69,10 @@
 
            
             <li class="nav-item">
-              <a class="nav-link" href="/tpestacionamientophp/paginas/historicoVehiculos.php">Historial Vehiculos</a>
+              <a class="nav-link" href="/paginas/historicoVehiculos.php">Historial Vehiculos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/tpestacionamientophp/paginas/historicoEmpleados.php">Historial Empleados</a>
+              <a class="nav-link" href="/paginas/historicoEmpleados.php">Historial Empleados</a>
             </li>
 
             <?php 

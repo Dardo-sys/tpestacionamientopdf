@@ -3,7 +3,7 @@ class AccesoDatos
 {
     private static $ObjetoAccesoDatos;
     private $objetoPDO;
- 
+ /*
     private function __construct()
     {
         try { 
@@ -15,8 +15,8 @@ class AccesoDatos
             die();
         }
     }
- 
-  /*  private function __construct()
+ */
+    private function __construct()
     {
         try { 
             $this->objetoPDO = new PDO('mysql:host=remotemysql.com;dbname=RV6OjRGtny;charset=utf8', 'RV6OjRGtny', 'a7BUsFJ0gQ', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -27,7 +27,7 @@ class AccesoDatos
             die();
         }
     }
- */
+ 
     public function RetornarConsulta($sql)
     { 
         return $this->objetoPDO->prepare($sql); 

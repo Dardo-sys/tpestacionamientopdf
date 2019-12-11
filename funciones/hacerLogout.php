@@ -2,5 +2,5 @@
 	session_start();
 $_SESSION=null;
 session_destroy();
-header("Location: /tpestacionamientophp/index.php");
+header("Location: /index.php");
 ?>
