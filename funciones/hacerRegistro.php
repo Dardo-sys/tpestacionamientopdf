@@ -36,7 +36,7 @@ if(isset($datos[0]['nombre']))
 	$select="INSERT INTO usuario( nombre, clave) VALUES ('$miObjeto->nombre','$miObjeto->contraseña')";
 
 	var_dump($select);
-	die();
+	//die();
 	$consulta =$objetoAccesoDato->RetornarConsulta($select);
 	$consulta->execute();
 }
