@@ -6,6 +6,7 @@ $miObjeto->nombre = $_GET['nombre'];
 $miObjeto->contraseña = $_GET['contraseña'];
 $miObjeto->contraseña = $_GET['contraseña'];
 var_dump($miObjeto->nombre);
+var_dump($miObjeto->contraseña);
 die();
 
 
