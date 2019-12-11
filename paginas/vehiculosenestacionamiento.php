@@ -62,7 +62,7 @@ session_start();
       <table style="width:100%">
 
        <tr>
-            <th>Vehiculo</th>
+            <th>Vehiculo </th>
             <th>Fecha/Hora Ingreso</th>
             
           </tr>
@@ -83,6 +83,9 @@ session_start();
   $consulta =$objetoAccesoDato->RetornarConsulta("select id ,patente  , horaingreso2  from registrovehiculo");
   $consulta->execute();     
   $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+  var_dump($consulta)
+  die();
 
     //$archivo = fopen("../archivos/facturados.txt", "r");
     //while(!feof($archivo)) 
