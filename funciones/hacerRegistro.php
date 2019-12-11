@@ -1,10 +1,12 @@
 <?php
+
 include 'accesoadatos.php';
 $miObjeto = new stdClass();
 $miObjeto->nombre = $_GET['nombre'];
 $miObjeto->contraseña = $_GET['contraseña'];
 $miObjeto->contraseña = $_GET['contraseña'];
-
+var_dump($miObjeto->nombre);
+Die();
 
 
 
