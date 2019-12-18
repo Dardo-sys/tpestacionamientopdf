@@ -1,6 +1,6 @@
 
  <?php  
- include '../funciones/accesoadatos.php';
+ //include '../funciones/accesoadatos.php';
       //export.php  
  if(isset($_POST["export"]))  
  {  
@@ -9,7 +9,7 @@
       header('Content-Disposition: attachment; filename=data.csv');  
       $output = fopen("php://output", "w");  
       fputcsv($output, array('patente', 'horaingreso', 'horasalida', 'importe'));  
-      $query = "SELECT * from vehiculosfacturados ORDER BY id DESC";  
+      $query = "SELECT * from vehiculosfacturados ORDER BY horasalida DESC";  
       $result = mysqli_query($connect, $query);  
       while($row = mysqli_fetch_assoc($result))  
       {  
