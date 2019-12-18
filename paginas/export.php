@@ -10,10 +10,10 @@
       $output = fopen("php://output", "w");  
       fputcsv($output, array('patente', 'horaingreso', 'horasalida', 'importe'),";");  
       $query = "SELECT * from vehiculosfacturados ORDER BY horasalida DESC";  
-      $result = mysqli_query($connect, $query);  
-      while($row = mysqli_fetch_assoc($result))  
+      $result = mysqli_query($connect, $query);
       var_dump($result)
-      die;
+      die();  
+      while($row = mysqli_fetch_assoc($result))  
       {  
            fputcsv($output, $row);  
       }  
