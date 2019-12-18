@@ -65,7 +65,7 @@
       // die();
       $borrar = $objetoAccesoDato->RetornarConsulta($select);
       $borrar->execute();       
-      header("Location: ../paginas/pagar.php?cobrar=".$cobrar."&ingreso=".$vehiculo['horaingreso']."&salida=".$horaSalida."&estadia=".$contadorFraccion."&patente=".$checkPatente);
+      header("Location: ../paginas/pagar.php?cobrar=".$resultado."&ingreso=".$vehiculo['horaingreso']."&salida=".$horaSalida."&estadia=".$contadorFraccion."&patente=".$checkPatente);
     }       
   }
 ?>
