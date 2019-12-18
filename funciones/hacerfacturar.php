@@ -46,9 +46,9 @@ $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
             $consulta->execute();
        
 
-            $id=$registrovehiculo['registrovehiculoID'];
+            $id=$registrovehiculo['id'];
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-            $select="DELETE FROM 'registrovehiculo' WHERE registrovehiculoID=$id";
+            $select="DELETE FROM `registrovehiculo` WHERE id=$id";
             $consulta =$objetoAccesoDato->RetornarConsulta($select);
             $consulta->execute();
 
