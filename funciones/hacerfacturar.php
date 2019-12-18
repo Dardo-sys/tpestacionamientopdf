@@ -8,7 +8,7 @@ $bandera=0;
 
 
 $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-      $consulta =$objetoAccesoDato->RetornarConsulta("select registrovehiculoID, patente, horaingreso2  from registrovehiculo");
+      $consulta =$objetoAccesoDato->RetornarConsulta("select horaingreso  from registrovehiculo");
       $consulta->execute();     
       $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 //var_dump($objetoAccesoDato)
@@ -24,7 +24,7 @@ $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
 
         $horaSalida = mktime();
 
-        $tiempo = $horaSalida - $registrovehiculo['horaingreso2'];
+        $tiempo = $horaSalida - $registrovehiculo['horaingreso'];
 
         $cobrar = ($tiempo / 60 /60) * $precio;
     
@@ -34,14 +34,14 @@ $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
         date_default_timezone_set('America/Argentina/Buenos_Aires');
 
         $objetoFacturado->Vehiculo = $patente2;
-        $objetoFacturado->fechaEntrada = date("d-m-y H:i",$registrovehiculo['horaingreso2']);
+        $objetoFacturado->fechaEntrada = date("d-m-y H:i",$registrovehiculo['horaingreso']);
         $objetoFacturado->fechaSalida = date("d-m-y H:i",$horaSalida);
         $objetoFacturado->importe = $cobrar;
     
         
 
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-            $select="INSERT INTO vehiculosfacturados( registrovehiculoID, patente, horaingreso, horasalida, importe) VALUES ('$objetoFacturado->Vehiculo','$objetoFacturado->fechaEntrada','$objetoFacturado->fechaSalida','$objetoFacturado->importe')";
+            $select="INSERT INTO vehiculosfacturados(patente, horaingreso, horasalida, importe) VALUES ('$objetoFacturado->Vehiculo','$objetoFacturado->fechaEntrada','$objetoFacturado->fechaSalida','$objetoFacturado->importe')";
             $consulta =$objetoAccesoDato->RetornarConsulta($select);
             $consulta->execute();
        
