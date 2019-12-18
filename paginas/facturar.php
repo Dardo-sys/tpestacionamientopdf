@@ -98,7 +98,7 @@ session_start();
          foreach ($datos as $registrovehiculo)
          {
           echo "<tr>";
-          echo "<td>".$registrovehiculo['patente']."</td>   <td>".$registrovehiculo['horaingreso2']."</td> <td>".$registrovehiculo['id']."</td>";
+          echo "<td>".$registrovehiculo['patente']."</td>   <td>".$registrovehiculo['horaingreso2']."</td>";
 
          
          }
