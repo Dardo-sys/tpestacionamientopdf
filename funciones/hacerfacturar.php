@@ -3,7 +3,7 @@
 
 <?php
   include 'accesoadatos.php';
-  $precioFraccion = 1;  
+  $precioFraccion = 100;  
   $contadorFraccion = 0;
   $borrar = false;
   $flagNoExiste = 1;
@@ -24,9 +24,9 @@
         $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
         // var_dump($datos);
         // die();
-        foreach ($datos as $vehiculo) 
+        foreach ($datos as $registrovehiculo) 
         {
-      if ($vehiculo['patente'] == $checkPatente) 
+      if ($registrovehiculo['patente'] == $checkPatente) 
       { 
         $flagNoExiste = 0;
         $borrar = true;
