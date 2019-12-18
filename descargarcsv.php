@@ -8,7 +8,7 @@ $output = fopen('php://output', 'w');
 // output the column headings
 fputcsv($output, array('patente;horaingreso;horasalida;importe'));
 $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-$consulta =$objetoAccesoDato->RetornarConsulta("select patente,horaingreso,horasalida,importe from registrovehiculo");
+$consulta =$objetoAccesoDato->RetornarConsulta("select patente,horaingreso,horasalida,importe from vehiculosfacturados");
 $consulta->execute();     
 $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 foreach ($datos as $vehiculo) {
