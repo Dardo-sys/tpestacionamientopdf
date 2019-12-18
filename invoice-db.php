@@ -2,8 +2,8 @@
 require('fpdf17/fpdf.php');
 
 //db connection
-$con = mysqli_connect('localhost','root','');
-mysqli_select_db($con,'istic2019a');
+$con = mysqli_connect('remotemysql.com','RV6OjRGtny','a7BUsFJ0gQ');
+mysqli_select_db($con,'RV6OjRGtny');
 
 //get invoices data
 $query = mysqli_query($con,"select * from vehiculosfacturados
