@@ -1,28 +1,35 @@
 <?php
-
-include 'accesoadatos.php';
-
-$precio=10;
-$patente2 = $_GET['patente'];
-$bandera=0;
-
-
-$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-      $consulta =$objetoAccesoDato->RetornarConsulta("select * from registrovehiculo");
-      $consulta->execute();     
-      $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
+  include 'accesoadatos.php';
+  $precioFraccion = 100;  
+  $contadorFraccion = 0;
+  $borrar = false;
+  $flagNoExiste = 1;
+  
+  date_default_timezone_set('America/Argentina/Buenos_Aires');
+  $horaSalida = mktime(); 
+  $checkPatente = $_GET['patente'];
+  if (empty($checkPatente)) 
+  {
+    header("Location: ../paginas/facturarVehiculo.php?error=campovacio");
+    exit();
+  }
+  else
+  {
+    $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+        $consulta =$objetoAccesoDato->RetornarConsulta("select * from registrovehiculo");
+        $consulta->execute();     
+        $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
         var_dump($datos);
         die();
-
         foreach ($datos as $vehiculo) 
         {
       if ($vehiculo['patente'] == $checkPatente) 
       { 
         $flagNoExiste = 0;
         $borrar = true;
-        $informarHora = $vehiculo['horaingreso'];
+        $informarHora = $vehiculo['horaIngreso'];
         //$horaSalida = strtotime($horaSalida);
-        $diffSegundos = $horaSalida - $vehiculo['horaingreso'];
+        $diffSegundos = $horaSalida - $vehiculo['horaIngreso'];
         $diffAlternativo = $diffSegundos;
         while ($diffAlternativo >= 3600) 
         {     
@@ -42,23 +49,23 @@ $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
     }
     if ($flagNoExiste == 1) 
     {
-      header("Location: ../paginas/cargarvehiculo.php?error=noexiste");
+      header("Location: ../paginas/facturarVehiculo.php?error=noexiste");
       exit();
     }
     else if ($flagNoExiste == 0)
     {
       
       // Inserte el vahiculo borrado en la tabla de historicos
-      $insert = "INSERT INTO vehiculosfacturados (patente, horaingreso, horasalida, importe) VALUES ('$checkPatente','$informarHora','$horaSalida','$resultado')";    
+      $insert = "INSERT INTO historicavehiculos (patente, horaIngreso, horaEgreso, montoFacturado) VALUES ('$checkPatente','$informarHora','$horaSalida','$resultado')";    
       $insertar =$objetoAccesoDato->RetornarConsulta($insert);
       $insertar->execute();
       // Borramos el vehiculo facturado de la tabla de estacionados
-      $select = "DELETE FROM registrovehiculo WHERE patente = '$checkPatente'";
+      $select = "DELETE FROM vehiculosestacionados WHERE patente = '$checkPatente'";
       // var_dump($select);
       // die();
       $borrar = $objetoAccesoDato->RetornarConsulta($select);
       $borrar->execute();       
-      header("Location: ../paginas/pagar.php?cobrar=".$resultado."&ingreso=".$vehiculo['horaingreso']."&salida=".$horaSalida."&estadia=".$contadorFraccion."&patente=".$checkPatente);
+      header("Location: ../paginas/facturarVehiculo.php?cobrar=".$resultado."&ingreso=".$vehiculo['horaIngreso']."&salida=".$horaSalida."&estadia=".$contadorFraccion."&patente=".$checkPatente);
     }       
   }
 ?>
