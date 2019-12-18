@@ -55,12 +55,14 @@
             //$consulta =$objetoAccesoDato->RetornarConsulta($select);
             //$consulta->execute();
 
-        // Inserte el vahiculo borrado en la tabla de historicos
+       
+      $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();  // Inserte el vahiculo borrado en la tabla de historicos
       $insert = "INSERT INTO vehiculosfacturados (patente, horaingreso, horasalida, importe) VALUES ('$objetoFacturado->Vehiculo','$objetoFacturado->fechaEntrada','$objetoFacturado->fechaSalida','$objetoFacturado->importe')";    
       $insertar =$objetoAccesoDato->RetornarConsulta($insert);
       $insertar->execute();
-      // Borramos el vehiculo facturado de la tabla de estacionados
-      $select = "DELETE FROM 'registrovehiculo' WHERE patente = '$patente2'";
+      
+      $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); // Borramos el vehiculo facturado de la tabla de estacionados
+      $select = "DELETE FROM registrovehiculo WHERE patente = $patente2";
       // var_dump($select);
       // die();
       $borrar = $objetoAccesoDato->RetornarConsulta($select);
