@@ -5,14 +5,14 @@ include 'accesoadatos.php';
 $precio=10;
 $patente2 = $_GET['patente'];
 $bandera=0;
-
-
+var_dump($patente2)
+die();
 $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
       $consulta =$objetoAccesoDato->RetornarConsulta("select * from registrovehiculo");
       $consulta->execute();     
       $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
-var_dump($consulta)
-die();
+//var_dump($consulta)
+//die();
   foreach ($datos as $registrovehiculo) 
   {
     if ($registrovehiculo['patente'] == $patente2)
