@@ -79,7 +79,7 @@ session_start();
 
 
 
-  //$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+  $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
   $consulta =$objetoAccesoDato->RetornarConsulta("select patente  , horaingreso2  from registrovehiculo");
   $consulta->execute();     
   $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
