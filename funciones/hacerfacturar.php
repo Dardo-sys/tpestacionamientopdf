@@ -8,7 +8,7 @@ $bandera=0;
 var_dump($patente2)
 die();
 $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-      $consulta =$objetoAccesoDato->RetornarConsulta("select * from registrovehiculo");
+      $consulta =$objetoAccesoDato->RetornarConsulta("select id, patente  , horaingreso from registrovehiculo");
       $consulta->execute();     
       $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 //var_dump($consulta)
