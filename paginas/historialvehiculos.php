@@ -69,14 +69,14 @@ session_start();
   include '../funciones/accesoadatos.php';
   date_default_timezone_set('America/Argentina/Buenos_Aires');
   $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-  $consulta =$objetoAccesoDato->RetornarConsulta("select id ,patente  , horaingreso, horasalida,importe  from vehiculosfacturados");
+  $consulta =$objetoAccesoDato->RetornarConsulta("select patente  , horaingreso, horasalida,importe  from vehiculosfacturados");
   $consulta->execute();     
   $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
     
     foreach ($datos as $vehiculosfacturados)
     {
         echo "<tr>";
-        echo "<td>".$vehiculosfacturados['id']."</td> <td>".$vehiculosfacturados['patente']."</td>   <td>".$vehiculosfacturados['horaingreso']."</td>   <td>".$vehiculosfacturados['horasalida']."</td>   <td>".$vehiculosfacturados['importe']."</td>";
+        echo "<td>".$vehiculosfacturados['patente']."</td>   <td>".$vehiculosfacturados['horaingreso']."</td>   <td>".$vehiculosfacturados['horasalida']."</td>   <td>".$vehiculosfacturados['importe']."</td>";
         echo "</tr>";
     }
     echo "</table>";
