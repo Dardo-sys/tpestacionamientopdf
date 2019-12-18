@@ -14,8 +14,8 @@
       <body>  
            <br /><br />  
            <div class="container" style="width:900px;">  
-                <h2 align="center">Export Mysql Table Data to CSV file in PHP</h2>  
-                <h3 align="center">Employee Data</h3>                 
+                <h2 align="center">Istic 2019</h2>  
+                <h3 align="center">Datos Autos Estacionados</h3>                 
                 <br />  
                 <form method="post" action="export.php" align="center">  
                      <input type="submit" name="export" value="CSV Export" class="btn btn-success" />  
@@ -35,7 +35,7 @@
                      {  
                      ?>  
                           <tr>  
-                               <td><?php echo $row["Patente"]; ?></td>  
+                               <td><?php echo $row["patente"]; ?></td>  
                                <td><?php echo $row["horaingreso"]; ?></td>  
                                <td><?php echo $row["horasalida"]; ?></td>  
                                <td><?php echo $row["importe"]; ?></td>  
