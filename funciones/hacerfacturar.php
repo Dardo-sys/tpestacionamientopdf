@@ -3,7 +3,7 @@
 
 <?php
   include 'accesoadatos.php';
-  $precioFraccion = 100;  
+  $precioFraccion = 1;  
   $contadorFraccion = 0;
   $borrar = false;
   $flagNoExiste = 1;
