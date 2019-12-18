@@ -1,24 +1,16 @@
 <?php
-  include 'accesoadatos.php';
-  $precioFraccion = 100;  
-  $contadorFraccion = 0;
-  $borrar = false;
-  $flagNoExiste = 1;
-  
-  date_default_timezone_set('America/Argentina/Buenos_Aires');
-  $horaSalida = mktime(); 
-  $checkPatente = $_GET['patente'];
-  if (empty($checkPatente)) 
-  {
-    header("Location: ../paginas/cargarehiculo.php?error=campovacio");
-    exit();
-  }
-  else
-  {
-    $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-        $consulta =$objetoAccesoDato->RetornarConsulta("select * from registrovehiculo");
-        $consulta->execute();     
-        $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+include 'accesoadatos.php';
+
+$precio=10;
+$patente2 = $_GET['patente'];
+$bandera=0;
+
+
+$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+      $consulta =$objetoAccesoDato->RetornarConsulta("select id, patente  , horaingreso  from registrovehiculo");
+      $consulta->execute();     
+      $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
         var_dump($datos);
         die();
         foreach ($datos as $vehiculo) 
