@@ -7,8 +7,8 @@ $patente2 = $_GET['patente'];
 $bandera=0;
 
 
-//$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-      $consulta =$objetoAccesoDato->RetornarConsulta("select registrovehiculoID, patente, horaingreso  from registrovehiculo");
+$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+      $consulta =$objetoAccesoDato->RetornarConsulta("select registrovehiculoID, patente, horaingreso2  from registrovehiculo");
       $consulta->execute();     
       $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 //var_dump($objetoAccesoDato)
@@ -24,7 +24,7 @@ $bandera=0;
 
         $horaSalida = mktime();
 
-        $tiempo = $horaSalida - $registrovehiculo['horaingreso'];
+        $tiempo = $horaSalida - $registrovehiculo['horaingreso2'];
 
         $cobrar = ($tiempo / 60 /60) * $precio;
     
@@ -34,7 +34,7 @@ $bandera=0;
         date_default_timezone_set('America/Argentina/Buenos_Aires');
 
         $objetoFacturado->Vehiculo = $patente2;
-        $objetoFacturado->fechaEntrada = date("d-m-y H:i",$registrovehiculo['horaingreso']);
+        $objetoFacturado->fechaEntrada = date("d-m-y H:i",$registrovehiculo['horaingreso2']);
         $objetoFacturado->fechaSalida = date("d-m-y H:i",$horaSalida);
         $objetoFacturado->importe = $cobrar;
     
@@ -48,7 +48,7 @@ $bandera=0;
 
             $id=$registrovehiculo['registrovehiculoID'];
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-            $select="DELETE FROM `registrovehiculo` WHERE registrovehiculoID=$id";
+            $select="DELETE FROM 'registrovehiculo' WHERE registrovehiculoID=$id";
             $consulta =$objetoAccesoDato->RetornarConsulta($select);
             $consulta->execute();
 
