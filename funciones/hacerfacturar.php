@@ -7,12 +7,12 @@ $patente2 = $_GET['patente'];
 $bandera=0;
 
 
-$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+//$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
       $consulta =$objetoAccesoDato->RetornarConsulta("select registrovehiculoID, patente, horaingreso  from registrovehiculo");
       $consulta->execute();     
       $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
-var_dump($objetoAccesoDato)
-die();
+//var_dump($objetoAccesoDato)
+//die();
   foreach ($datos as $registrovehiculo) 
   {
     if ($registrovehiculo['patente'] == $patente2)
