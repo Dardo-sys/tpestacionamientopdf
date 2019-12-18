@@ -19,17 +19,17 @@
         $consulta =$objetoAccesoDato->RetornarConsulta("select * from registrovehiculo");
         $consulta->execute();     
         $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($datos);
-        die();
+        //var_dump($datos);
+        //die();
         foreach ($datos as $vehiculo) 
         {
       if ($vehiculo['patente'] == $checkPatente) 
       { 
         $flagNoExiste = 0;
         $borrar = true;
-        $informarHora = $vehiculo['horaIngreso'];
+        $informarHora = $vehiculo['horaingreso'];
         //$horaSalida = strtotime($horaSalida);
-        $diffSegundos = $horaSalida - $vehiculo['horaIngreso'];
+        $diffSegundos = $horaSalida - $vehiculo['horaingreso'];
         $diffAlternativo = $diffSegundos;
         while ($diffAlternativo >= 3600) 
         {     
