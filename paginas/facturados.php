@@ -110,7 +110,7 @@ body {
     echo "<h5> TOTAL FACTURADO: $".$totalFacturado."</h5>";
     
   ?>
-<a href="../exportdatacsv.php"><h4>Descargar CSV</h4></a>
+<a href="../paginas/exportdatacsv.php"><h4>Descargar CSV</h4></a>
     </main>
       
      <footer class="footer">
