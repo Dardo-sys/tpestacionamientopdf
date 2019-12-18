@@ -8,11 +8,12 @@ $bandera=0;
 
 
 $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-      $consulta =$objetoAccesoDato->RetornarConsulta("select id, patente  , horaingreso  from registrovehiculo");
+      $consulta =$objetoAccesoDato->RetornarConsulta("select * from registrovehiculo");
       $consulta->execute();     
       $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
         var_dump($datos);
         die();
+
         foreach ($datos as $vehiculo) 
         {
       if ($vehiculo['patente'] == $checkPatente) 
