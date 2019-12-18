@@ -8,7 +8,7 @@ $bandera=0;
 
 
 $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-      $consulta =$objetoAccesoDato->RetornarConsulta("select id, patente  , horaingreso  from registrovehiculo");
+      $consulta =$objetoAccesoDato->RetornarConsulta("select registrovehiculoID, patente  , horaingreso  from registrovehiculo");
       $consulta->execute();     
       $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
@@ -46,9 +46,9 @@ $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
             $consulta->execute();
        
 
-            $id=$registrovehiculo['id'];
+            $id=$registrovehiculo['registrovehiculoID'];
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-            $select="DELETE FROM `registrovehiculo` WHERE id=$id";
+            $select="DELETE FROM `registrovehiculo` WHERE registrovehiculoID=$id";
             $consulta =$objetoAccesoDato->RetornarConsulta($select);
             $consulta->execute();
 
