@@ -80,7 +80,7 @@ session_start();
 
 
   //$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-  $consulta =$objetoAccesoDato->RetornarConsulta("select id ,patente  , horaingreso2  from registrovehiculo");
+  $consulta =$objetoAccesoDato->RetornarConsulta("select patente  , horaingreso2  from registrovehiculo");
   $consulta->execute();     
   $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
 
@@ -100,7 +100,7 @@ session_start();
         //echo "</tr>";
 
       echo "<tr>";
-        echo "<td>".$registrovehiculo['patente']."</td>   <td>".$registrovehiculo['horaingreso2']."</td> <td>".$registrovehiculo['id']."</td>";
+        echo "<td>".$registrovehiculo['patente']."</td>   <td>".$registrovehiculo['horaingreso2']."</td> ";
 
       //echo "<input type='submit' name='hacer'  value='".$registrovehiculo['id']."'>borrar</input><br>";
         
