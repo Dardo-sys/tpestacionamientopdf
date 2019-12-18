@@ -24,6 +24,8 @@
         foreach ($datos as $vehiculo) 
         {
       if ($vehiculo['patente'] == $checkPatente) 
+        var_dump($vehiculo['patente']);
+        die();
       { 
         $flagNoExiste = 0;
         $borrar = true;
