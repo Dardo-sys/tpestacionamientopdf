@@ -24,15 +24,15 @@
         $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
         // var_dump($datos);
         // die();
-        foreach ($datos as $registrovehiculo) 
+        foreach ($datos as $vehiculo) 
         {
-      if ($registrovehiculo['patente'] == $checkPatente) 
+      if ($vehiculo['patente'] == $checkPatente) 
       { 
         $flagNoExiste = 0;
         $borrar = true;
-        $informarHora = $registrovehiculo['horaingreso'];
+        $informarHora = $vehiculo['horaingreso'];
         //$horaSalida = strtotime($horaSalida);
-        $diffSegundos = $horaSalida - $registrovehiculo['horaingreso'];
+        $diffSegundos = $horaSalida - $vehiculo['horaingreso'];
         $diffAlternativo = $diffSegundos;
         while ($diffAlternativo >= 3600) 
         {     
@@ -68,7 +68,7 @@
       // die();
       $borrar = $objetoAccesoDato->RetornarConsulta($select);
       $borrar->execute();       
-      header("Location: ../paginas/pagar.php?cobrar=".$resultado."&ingreso=".$registrovehiculo['horaingreso']."&salida=".$horaSalida."&estadia=".$contadorFraccion."&patente=".$checkPatente);
+      header("Location: ../paginas/pagar.php?cobrar=".$resultado."&ingreso=".$vehiculo['horaingreso']."&salida=".$horaSalida."&estadia=".$contadorFraccion."&patente=".$checkPatente);
     }       
   }
 ?>
