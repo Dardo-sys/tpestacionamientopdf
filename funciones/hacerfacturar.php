@@ -1,12 +1,7 @@
 <?php
   include 'accesoadatos.php';
-  $precioFraccion = 100;  
-  $contadorFraccion = 0;
-  $borrar = false;
-  $flagNoExiste = 1;
-  
-  date_default_timezone_set('America/Argentina/Buenos_Aires');
-  $horaSalida = mktime(); 
+  $precio = 100;  
+     
   $patente2 = $_GET['patente'];
   
 
