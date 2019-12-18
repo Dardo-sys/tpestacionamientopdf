@@ -60,6 +60,7 @@ session_start();
             <a href="../paginas/facturar.php"><h4>Facturar Otro Vehiculo</h4></a>
             <a href="../index.php"><h4>Volver al Inicio</h4></a>
             <a href="../invoice-form-db.php"><h4>Descargar PDF</h4></a>
+            <a href="../descargarcsv.php"><h4>Descargar CSV</h4></a>
         
     </main>
       
