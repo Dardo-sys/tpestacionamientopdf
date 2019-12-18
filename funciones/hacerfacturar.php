@@ -59,8 +59,8 @@
       // Borramos el vehiculo facturado de la tabla de estacionados
       $id=$registrovehiculo['registrovehiculoID'];
       $select = "DELETE FROM registrovehiculo WHERE registrovehiculoID = $id";
-       var_dump($select);
-       die();
+       //var_dump($select);
+       //die();
       $borrar = $objetoAccesoDato->RetornarConsulta($select);
       //var_dump($borrar);
       //die();
