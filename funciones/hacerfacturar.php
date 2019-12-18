@@ -61,7 +61,7 @@
        //var_dump($select);
        //die();
       $borrar = $objetoAccesoDato->RetornarConsulta($select);
-      var_dump($select);
+      var_dump($borrar);
       die();
       $borrar->execute();
 
