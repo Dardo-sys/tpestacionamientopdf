@@ -13,6 +13,7 @@
       $result = mysqli_query($connect, $query);  
       while($row = mysqli_fetch_assoc($result))  
       var_dump($result)
+      die;
       {  
            fputcsv($output, $row);  
       }  
