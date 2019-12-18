@@ -8,7 +8,7 @@
       header('Content-Type: text/csv; charset=utf-8');  
       header('Content-Disposition: attachment; filename=data.csv');  
       $output = fopen("php://output", "w");  
-      fputcsv($output, array('patente'; 'horaingreso'; 'horasalida'; 'importe'));  
+      fputcsv($output, array('patente', 'horaingreso', 'horasalida', 'importe'));  
       $query = "SELECT * from vehiculosfacturados ORDER BY horasalida DESC";  
       $result = mysqli_query($connect, $query);  
       while($row = mysqli_fetch_assoc($result))  
