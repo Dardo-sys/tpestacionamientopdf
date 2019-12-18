@@ -19,7 +19,7 @@
   else
   {
     $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-        $consulta =$objetoAccesoDato->RetornarConsulta("select * from registrovehiculo");
+        $consulta =$objetoAccesoDato->RetornarConsulta("select patente, horaingreso from registrovehiculo");
         $consulta->execute();     
         $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
         var_dump($datos);
