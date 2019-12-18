@@ -1,6 +1,3 @@
-
-
-
 <?php
   include 'accesoadatos.php';
   $precioFraccion = 100;  
@@ -13,20 +10,20 @@
   $checkPatente = $_GET['patente'];
   if (empty($checkPatente)) 
   {
-    header("Location: ../paginas/cargarvehiculo.php?error=campovacio");
+    header("Location: ../paginas/cargarehiculo.php?error=campovacio");
     exit();
   }
   else
   {
     $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-        $consulta =$objetoAccesoDato->RetornarConsulta("select patente, horaingreso from registrovehiculo");
+        $consulta =$objetoAccesoDato->RetornarConsulta("select * from registrovehiculo");
         $consulta->execute();     
         $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($datos);
-        die();
-        foreach ($datos as $registrovehiculo) 
+        // var_dump($datos);
+        // die();
+        foreach ($datos as $vehiculo) 
         {
-      if ($registrovehiculo['patente'] == $checkPatente) 
+      if ($vehiculo['patente'] == $checkPatente) 
       { 
         $flagNoExiste = 0;
         $borrar = true;
@@ -68,10 +65,7 @@
       // die();
       $borrar = $objetoAccesoDato->RetornarConsulta($select);
       $borrar->execute();       
-      header("Location: ../paginas/pagar.php?cobrar=".$resultado."&ingreso=".$vehiculo['horaingreso']."&salida=".$horaSalida."&estadia=".$contadorFraccion."&patente=".$checkPatente);
+      header("Location: ../paginas/pagar.php?cobrar=".$cobrar."&ingreso=".$vehiculo['horaingreso']."&salida=".$horaSalida."&estadia=".$contadorFraccion."&patente=".$checkPatente);
     }       
   }
 ?>
-
-
-
