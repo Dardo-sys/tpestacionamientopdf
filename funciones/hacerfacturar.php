@@ -41,7 +41,7 @@ $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
         
 
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-            $select="INSERT INTO vehiculosfacturados( patente, horaingreso, horasalida,importe) VALUES ('$objetoFacturado->Vehiculo','$objetoFacturado->fechaEntrada','$objetoFacturado->fechaSalida','$objetoFacturado->importe')";
+            $select="INSERT INTO vehiculosfacturados( registrovehiculoID, patente, horaingreso, horasalida, importe) VALUES ('$objetoFacturado->Vehiculo','$objetoFacturado->fechaEntrada','$objetoFacturado->fechaSalida','$objetoFacturado->importe')";
             $consulta =$objetoAccesoDato->RetornarConsulta($select);
             $consulta->execute();
        
