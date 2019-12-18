@@ -4,7 +4,7 @@
       //export.php  
  if(isset($_POST["export"]))  
  {  
-      $connect = mysqli_connect("remotemysql.com", "RV6OjRGtny", "a7BUsFJ0gQ", "testing");  
+      $connect = mysqli_connect('remotemysql.com','RV6OjRGtny','a7BUsFJ0gQ');  
       header('Content-Type: text/csv; charset=utf-8');  
       header('Content-Disposition: attachment; filename=data.csv');  
       $output = fopen("php://output", "w");  

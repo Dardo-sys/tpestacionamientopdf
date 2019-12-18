@@ -1,6 +1,6 @@
  <?php  
  //include '../funciones/accesoadatos.php';
- $connect = mysqli_connect("remotemysql.com", "RV6OjRGtny", "a7BUsFJ0gQ", "testing");  
+ $connect = mysqli_connect('remotemysql.com','RV6OjRGtny','a7BUsFJ0gQ');  
  $query ="SELECT * FROM vehiculosfacturados ORDER BY horasalida desc";  
  $result = mysqli_query($connect, $query);  
  ?>  
