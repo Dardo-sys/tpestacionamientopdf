@@ -57,8 +57,8 @@
       $insertar->execute();
       
       // Borramos el vehiculo facturado de la tabla de estacionados
-      $patente2=$registrovehiculo['patente'];
-      $select = "DELETE FROM 'registrovehiculo' WHERE patente = $patente2";
+      $id=$registrovehiculo['registrovehiculoID'];
+      $select = "DELETE FROM 'registrovehiculo' WHERE registrovehiculoID = $id";
        //var_dump($select);
        //die();
       $borrar = $objetoAccesoDato->RetornarConsulta($select);
