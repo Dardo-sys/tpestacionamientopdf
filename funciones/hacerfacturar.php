@@ -30,9 +30,9 @@
       { 
         $flagNoExiste = 0;
         $borrar = true;
-        $informarHora = $vehiculo['horaingreso'];
+        $informarHora = $registrovehiculo['horaingreso'];
         //$horaSalida = strtotime($horaSalida);
-        $diffSegundos = $horaSalida - $vehiculo['horaingreso'];
+        $diffSegundos = $horaSalida - $registrovehiculo['horaingreso'];
         $diffAlternativo = $diffSegundos;
         while ($diffAlternativo >= 3600) 
         {     
@@ -68,7 +68,7 @@
       // die();
       $borrar = $objetoAccesoDato->RetornarConsulta($select);
       $borrar->execute();       
-      header("Location: ../paginas/pagar.php?cobrar=".$resultado."&ingreso=".$vehiculo['horaingreso']."&salida=".$horaSalida."&estadia=".$contadorFraccion."&patente=".$checkPatente);
+      header("Location: ../paginas/pagar.php?cobrar=".$resultado."&ingreso=".$registrovehiculo['horaingreso']."&salida=".$horaSalida."&estadia=".$contadorFraccion."&patente=".$checkPatente);
     }       
   }
 ?>
